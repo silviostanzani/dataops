@@ -13,7 +13,7 @@ def somar_dados(**context):
     print(f"Soma dos parâmetros: {soma}")
 
 with DAG(
-    'workflow_compras_artefatos',
+    'kaique',
     default_args={'retries': 1},
     start_date=datetime(2024, 1, 1),
     schedule_interval=None,  # Executa manualmente
