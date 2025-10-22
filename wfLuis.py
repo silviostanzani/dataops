@@ -4,14 +4,14 @@ from datetime import datetime, timedelta
  
 def extrair_dados():
     # Simula extração de dados
-    print("Extraindo dados da fonte...")
-    return { compras: 100, artefatos: 100 }
+    print('Extraindo dados da fonte...')
+    return { 'compras': 100, 'artefatos': 100 }
  
 def transformar_dados(**context):
-    dados = context.ti.xcom_pull(task_ids='extrair')
+    dados = context['ti'].xcom_pull(task_ids='extrair')
 
     # Processa os dados
-    soma_dados = dados.compras + dados.artefatos
+    soma_dados = dados['compras'] + dados['artefatos']
 
     print(f'Soma: {soma_dados}')
     return dados
